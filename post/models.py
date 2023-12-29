@@ -4,6 +4,8 @@ from django.db import models
 class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
+    total_ratings = models.IntegerField(default=0)
+    average_rating = models.DecimalField(max_digits=3, decimal_places=2, default=0.00)
 
 
 class UserRating(models.Model):
